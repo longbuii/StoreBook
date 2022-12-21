@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+@model List<StoreBookEFR.Models.Books>
+@foreach (var book in Model)
+{
+    <div class="row">
+        <div class="post col-md-6">
+            <h2>@book.Title</h2>
+            <h6>Description: @book.Description</h6>
+            <h5>Price: @book.Price VNĐ</h5>
+            <div>
+                Posted on <i>@book.Date</i>
+                @if (book.Author != null)
+                {
+                    @:by <i>@book.Author.FullName  @book.Author.UserName</i>
+                }
+            </div>
+        </div>
+    </div>
+}
